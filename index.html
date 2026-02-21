@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tam Tam Gong | Spiritual Soundscapes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Font Assignments */
+        .font-heading {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* Parallax Utility Class */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: 0;
+            /* Enhance depth perception */
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Gradient Overlay for Readability */
+        .overlay {
+            background: linear-gradient(to bottom, rgba(16, 20, 28, 0.3), rgba(16, 20, 28, 0.8));
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        /* Smooth reveal animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Audio Player Styling */
+        .audio-track {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .audio-track:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 100, 100, 0.3);
+        }
+
+        /* Glow effect for the 'Gong' feel */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 160, 122, 0.4);
+        }
+
+        /* Advanced Parallax Layering */
+        #parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+
+        /* Ensure sections are transparent to show background */
+        section {
+            background-color: transparent !important;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background-color: transparent !important;
+        }
+
+        /* Specific section adjustments for visibility */
+        .content-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-body antialiased overflow-x-hidden">
+
+    <!-- Fixed Parallax Background Container -->
+    <div id="parallax-bg">
+        <div class="parallax-layer" id="layer-hero" style="background-image: url('images/hero.png');"></div>
+        <div class="parallax-layer" id="layer-mountains" style="background-image: url('images/mountains.png');"></div>
+        <div class="parallax-layer" id="layer-forest" style="background-image: url('images/forest.png');"></div>
+        <div class="parallax-layer" id="layer-footer" style="background-image: url('images/footer.png');"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 p-6" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#"
+                class="font-heading text-2xl tracking-widest text-orange-100 hover:text-orange-300 transition-colors uppercase">
+                Tam Tam <span class="text-orange-500">Gong</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#about"
+                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Journey</a>
+                <a href="#music"
+                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Soundscapes</a>
+                <a href="#events"
+                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Gatherings</a>
+                <a href="#contact"
+                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Connect</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-orange-100">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO - THE GONG MOON -->
+    <header class="h-screen flex items-center justify-center relative">
+        <div class="relative z-10 text-center px-4 reveal active">
+            <p class="text-orange-300 tracking-[0.3em] text-sm md:text-lg mb-4 uppercase">Vibration &bull; Earth &bull;
+                Spirit</p>
+            <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl mb-6 text-white glow-text">
+                Resonance
+            </h1>
+            <p class="max-w-xl mx-auto text-lg md:text-xl text-slate-200 leading-relaxed font-light">
+                A journey through sound, connecting the heartbeat of the earth with the silence of the cosmos.
+            </p>
+            <div class="mt-10">
+                <a href="#music"
+                    class="inline-block px-8 py-3 border border-orange-400 text-orange-100 hover:bg-orange-500 hover:text-white transition-all duration-300 uppercase tracking-widest text-xs rounded-full">
+                    Listen Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-orange-200/50">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </header>
+
+    <!-- SECTION 2: TEXT CONTENT - EARTH CONNECTION -->
+    <section id="about" class="py-24 bg-slate-900 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <i data-lucide="flower" class="w-12 h-12 text-orange-400 mx-auto mb-6 opacity-80"></i>
+            <h2 class="font-heading text-4xl text-orange-100 mb-8">The Sound of the Earth</h2>
+            <p class="text-xl text-slate-400 leading-loose mb-6">
+                In the space between thoughts, there is a vibration. My music is not just heard, but felt—a bridge
+                between the ancient wisdom of the mountains and the gentle breath of the forest.
+            </p>
+            <p class="text-lg text-slate-500 leading-loose">
+                Using the primal resonance of the Tam Tam Gong, I craft soundscapes for yoga, deep meditation, and
+                communal healing. Each performance is a painting in sound, textured with the colors of dusk and the
+                peace of nature.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PARALLAX - THE MOUNTAINS -->
+    <section class="min-h-[70vh] flex items-center">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="content-card p-10 rounded-lg border-l-4 border-orange-500 reveal">
+                <h3 class="font-heading text-3xl mb-4 text-orange-100">Deep Meditation</h3>
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    Like the stillness of a mountain peak at dusk, these sessions are designed to ground your spirit.
+                    The low frequencies of the gong resonate with the root chakra, creating a profound sense of safety
+                    and stability.
+                </p>
+                <a href="#"
+                    class="text-orange-400 hover:text-orange-300 uppercase text-xs tracking-widest border-b border-orange-400 pb-1">Explore
+                    Classes</a>
+            </div>
+            <!-- Empty column to let the mountain image show through -->
+            <div></div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: MUSIC PLAYLIST -->
+    <section id="music" class="py-24 bg-slate-950">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-orange-500 uppercase tracking-widest text-xs font-bold">Discography</span>
+                <h2 class="font-heading text-4xl md:text-5xl mt-3 text-slate-100">Sonic Journeys</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Track 1 -->
+                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal">
+                    <div
+                        class="w-16 h-16 bg-orange-900/30 rounded-full flex items-center justify-center text-orange-400 flex-shrink-0">
+                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl text-slate-200">Red Mountain Dusk</h4>
+                        <p class="text-sm text-slate-500 mt-1">Gong & Wind Chimes • 12:00</p>
+                    </div>
+                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-400 flex-shrink-0">
+                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl text-slate-200">Forest Awakening</h4>
+                        <p class="text-sm text-slate-500 mt-1">Flute & Nature Sounds • 08:45</p>
+                    </div>
+                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-16 h-16 bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-400 flex-shrink-0">
+                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl text-slate-200">Root Chakra Healing</h4>
+                        <p class="text-sm text-slate-500 mt-1">Deep Tam Tam • 24:00</p>
+                    </div>
+                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center text-purple-400 flex-shrink-0">
+                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading text-xl text-slate-200">Traveling Spirit</h4>
+                        <p class="text-sm text-slate-500 mt-1">Ambient Electronic • 05:30</p>
+                    </div>
+                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PARALLAX - THE FOREST -->
+    <section class="min-h-[70vh] flex items-center justify-end">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <!-- Empty column -->
+            <div></div>
+            <div class="content-card p-10 rounded-lg border-r-4 border-blue-400 reveal">
+                <h3 class="font-heading text-3xl mb-4 text-blue-100">Community & Nature</h3>
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    We are not separate from the wild. In our forest retreats, we use yoga and sound to dissolve the
+                    barriers between self and other, finding peace in the collective breath of the community.
+                </p>
+                <div class="flex space-x-4">
+                    <span
+                        class="px-3 py-1 bg-blue-900/50 text-blue-200 text-xs rounded uppercase tracking-wider">Yoga</span>
+                    <span
+                        class="px-3 py-1 bg-blue-900/50 text-blue-200 text-xs rounded uppercase tracking-wider">Retreats</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: EVENTS -->
+    <section id="events" class="py-24 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-heading text-4xl text-center text-slate-100 mb-12 reveal">Upcoming Gatherings</h2>
+
+            <div class="space-y-6">
+                <!-- Event 1 -->
+                <div
+                    class="group border-b border-slate-800 pb-6 hover:bg-slate-800/50 transition-colors rounded-lg p-4 cursor-pointer reveal">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <span class="text-orange-500 font-bold block mb-1">OCT 12, 2026</span>
+                            <h3
+                                class="font-heading text-2xl text-slate-200 group-hover:text-orange-200 transition-colors">
+                                Full Moon Gong Bath</h3>
+                            <p class="text-slate-500 text-sm">Sedona, Arizona • The Sanctuary</p>
+                        </div>
+                        <button
+                            class="px-6 py-2 border border-slate-600 rounded-full text-slate-300 hover:border-orange-500 hover:text-orange-500 transition-all text-sm uppercase tracking-wider">
+                            Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div
+                    class="group border-b border-slate-800 pb-6 hover:bg-slate-800/50 transition-colors rounded-lg p-4 cursor-pointer reveal">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <span class="text-orange-500 font-bold block mb-1">NOV 05, 2026</span>
+                            <h3
+                                class="font-heading text-2xl text-slate-200 group-hover:text-orange-200 transition-colors">
+                                Forest Silence Retreat</h3>
+                            <p class="text-slate-500 text-sm">Oregon Cascades • 3 Day Immersion</p>
+                        </div>
+                        <button
+                            class="px-6 py-2 border border-slate-600 rounded-full text-slate-300 hover:border-orange-500 hover:text-orange-500 transition-all text-sm uppercase tracking-wider">
+                            Join Waitlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FOOTER / CONTACT - THE GRASS -->
+    <footer id="contact" class="min-h-[60vh] flex flex-col justify-center relative text-center py-20">
+        <!-- Optional extra darkness for footer -->
+        <div class="absolute inset-0 bg-slate-900/40 -z-10"></div>
+        <div class="relative z-10 container mx-auto px-6 reveal">
+            <h2 class="font-heading text-5xl text-white mb-8">Connect with the Source</h2>
+            <p class="text-slate-300 max-w-lg mx-auto mb-10 text-lg">
+                Subscribe for new soundscapes, retreat announcements, and moments of peace delivered to your inbox.
+            </p>
+
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4 mb-16">
+                <input type="email" placeholder="Your Email Address"
+                    class="flex-1 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-orange-400 backdrop-blur-sm">
+                <button
+                    class="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full font-bold uppercase tracking-wider transition-colors shadow-lg shadow-orange-900/50">
+                    Subscribe
+                </button>
+            </form>
+
+            <div class="flex justify-center space-x-8 text-slate-400 mb-8">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram"
+                        class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="music" class="w-6 h-6"></i></a>
+                <!-- Spotify/Music icon placeholder -->
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+
+            <p class="text-slate-600 text-sm">
+                &copy; 2026 Tam Tam Gong Music. All rights reserved. <br>
+                <span class="text-xs opacity-50">Designed with Spirit & Code.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Parallax Configuration
+        const bgContainer = document.getElementById('parallax-bg');
+        const layers = {
+            hero: document.getElementById('layer-hero'),
+            mountains: document.getElementById('layer-mountains'),
+            forest: document.getElementById('layer-forest'),
+            footer: document.getElementById('layer-footer')
+        };
+
+        // Alignment Point: 100vh (1 viewport height)
+        // At this point, all layers should have translateY(0)
+        // Speed Factors: Higher means moves faster/further from alignment
+        // We want Foreground (Footer/Forest) to move more than Background (Hero)
+        const speeds = {
+            hero: 0.1,      // Background (slowest)
+            mountains: 0.3, // Mid-back
+            forest: 0.6,    // Mid-front
+            footer: 1.0     // Foreground (fastest)
+        };
+
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+
+            // Alignment scroll position
+            const targetScroll = viewportHeight;
+
+            // Calculate translation for each layer
+            // Formula: (currentScroll - targetScroll) * speed
+            // This ensures that when scrollY === targetScroll, translate is 0
+
+            Object.keys(layers).forEach(key => {
+                const speed = speeds[key];
+                const translateY = (scrollY - targetScroll) * speed;
+                layers[key].style.transform = `translateY(${translateY}px)`;
+            });
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            if (scrollY > 50) {
+                navbar.classList.add('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg');
+            }
+
+            // Reveal Animation Trigger
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < viewportHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", updateParallax);
+        window.addEventListener("resize", updateParallax);
+
+        // Initial Trigger
+        updateParallax();
+    </script>
+</body>
+
+</html>
