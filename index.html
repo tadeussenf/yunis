@@ -48,7 +48,7 @@
         /* Smooth reveal animation classes */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(-40px);
             transition: all 1s ease-out;
         }
 
@@ -75,14 +75,20 @@
             text-shadow: 0 0 20px rgba(255, 160, 122, 0.4);
         }
 
-        /* Advanced Parallax Layering */
+        /* Parallax Hero */
+        #parallax-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
         #parallax-bg {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 0;
             overflow: hidden;
             background-color: #0f172a;
         }
@@ -92,22 +98,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-size: contain;
-            background-position: center;
+            height: 120%;
+            background-size: cover;
+            background-position: center bottom;
             background-repeat: no-repeat;
             will-change: transform;
         }
 
-        /* Ensure sections are transparent to show background */
-        section {
-            background-color: transparent !important;
+        #parallax-hero header {
             position: relative;
             z-index: 1;
-        }
-
-        header {
-            background-color: transparent !important;
         }
 
         /* Specific section adjustments for visibility */
@@ -120,15 +120,6 @@
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-body antialiased overflow-x-hidden">
-
-    <!-- Fixed Parallax Background Container -->
-    <div id="parallax-bg">
-        <div class="parallax-layer" id="layer-sky" style="background-image: url('images/sky.png');"></div>
-        <div class="parallax-layer" id="layer-mountains" style="background-image: url('images/mountains.png');"></div>
-        <div class="parallax-layer" id="layer-trees" style="background-image: url('images/trees.png');"></div>
-        <div class="parallax-layer" id="layer-grass" style="background-image: url('images/grass.png');"></div>
-        <div class="overlay"></div>
-    </div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 p-6" id="navbar">
@@ -156,9 +147,22 @@
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO - THE GONG MOON -->
-    <header class="h-screen flex items-center justify-center relative">
-        <div class="relative z-10 text-center px-4 reveal active">
+    <!-- SECTION 1: PARALLAX HERO -->
+    <section id="parallax-hero">
+        <div id="parallax-bg">
+            <div class="parallax-layer" id="layer-sky" data-direction="down" data-speed="0.6"
+                style="background-image: url('images/sky.png');"></div>
+            <div class="parallax-layer" id="layer-mountains" data-direction="down" data-speed="0.5"
+                style="background-image: url('images/mountains.png');"></div>
+            <div class="parallax-layer" id="layer-trees" data-direction="down" data-speed="0.35"
+                style="background-image: url('images/trees.png');"></div>
+            <div class="parallax-layer" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vh="10"
+                style="background-image: url('images/grass.png');"></div>
+            <div class="overlay"></div>
+        </div>
+
+        <header class="h-full flex items-center justify-center relative">
+            <div class="relative z-10 text-center px-4 reveal">
             <p class="text-orange-300 tracking-[0.3em] text-sm md:text-lg mb-4 uppercase">Vibration &bull; Earth &bull;
                 Spirit</p>
             <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl mb-6 text-white glow-text">
@@ -173,13 +177,14 @@
                     Listen Now
                 </a>
             </div>
-        </div>
+            </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-orange-200/50">
-            <i data-lucide="chevron-down" class="w-8 h-8"></i>
-        </div>
-    </header>
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-orange-200/50">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </div>
+        </header>
+    </section>
 
     <!-- SECTION 2: TEXT CONTENT - EARTH CONNECTION -->
     <section id="about" class="py-24 bg-slate-900 relative">
@@ -391,39 +396,28 @@
 
         // Parallax Configuration
         const bgContainer = document.getElementById('parallax-bg');
-        const layers = {
-            sky: document.getElementById('layer-sky'),
-            mountains: document.getElementById('layer-mountains'),
-            trees: document.getElementById('layer-trees'),
-            grass: document.getElementById('layer-grass')
-        };
-
-        // Alignment Point: 100vh (1 viewport height)
-        // At this point, all layers should have translateY(0)
-        // Speed Factors: Higher means moves faster/further from alignment
-        // We want Foreground (Footer/Forest) to move more than Background (Hero)
-        const speeds = {
-            sky: 0.08,       // Background (slowest)
-            mountains: 0.2,  // Mid-back
-            trees: 0.35,     // Mid-front
-            grass: 0.5       // Foreground (fastest)
-        };
+        const parallaxLayers = Array.from(
+            document.querySelectorAll('#parallax-bg .parallax-layer')
+        );
 
         function updateParallax() {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
 
-            // Alignment scroll position
-            const targetScroll = viewportHeight;
-
-            // Calculate translation for each layer
-            // Formula: (currentScroll - targetScroll) * speed
-            // This ensures that when scrollY === targetScroll, translate is 0
-
-            Object.keys(layers).forEach(key => {
-                const speed = speeds[key];
-                const translateY = (scrollY - targetScroll) * speed;
-                layers[key].style.transform = `translateY(${translateY}px)`;
+            // Move layers upward as the user scrolls down, only within the hero viewport
+            const clampedScroll = Math.min(scrollY, viewportHeight);
+            parallaxLayers.forEach(layer => {
+                const speed = parseFloat(layer.dataset.speed || '0.2');
+                const direction = layer.dataset.direction === 'down' ? 1 : -1;
+                const offsetPx = parseFloat(layer.dataset.offset || '0');
+                const offsetVw = parseFloat(layer.dataset.offsetVw || '0');
+                const offsetVh = parseFloat(layer.dataset.offsetVh || '0');
+                const baseOffset =
+                    offsetPx +
+                    (offsetVw * (window.innerWidth / 100)) +
+                    (offsetVh * (window.innerHeight / 100));
+                const translateY = baseOffset + direction * clampedScroll * speed;
+                layer.style.transform = `translateY(${translateY}px)`;
             });
 
             // Navbar Scroll Effect
