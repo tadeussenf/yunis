@@ -92,9 +92,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 120%;
-            background-size: cover;
-            background-position: center bottom;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
             background-repeat: no-repeat;
             will-change: transform;
         }
@@ -398,23 +398,31 @@
             grass: document.getElementById('layer-grass')
         };
 
-        // Speed Factors: Higher means moves faster/further on scroll
-        // We want Foreground (Grass/Trees) to move more than Background (Sky)
+        // Alignment Point: 100vh (1 viewport height)
+        // At this point, all layers should have translateY(0)
+        // Speed Factors: Higher means moves faster/further from alignment
+        // We want Foreground (Footer/Forest) to move more than Background (Hero)
         const speeds = {
-            sky: 0.04,       // Background (slowest)
-            mountains: 0.08, // Mid-back
-            trees: 0.12,     // Mid-front
-            grass: 0.18      // Foreground (fastest)
+            sky: 0.08,       // Background (slowest)
+            mountains: 0.2,  // Mid-back
+            trees: 0.35,     // Mid-front
+            grass: 0.5       // Foreground (fastest)
         };
 
         function updateParallax() {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
 
-            // Move layers upward as the user scrolls down
+            // Alignment scroll position
+            const targetScroll = viewportHeight;
+
+            // Calculate translation for each layer
+            // Formula: (currentScroll - targetScroll) * speed
+            // This ensures that when scrollY === targetScroll, translate is 0
+
             Object.keys(layers).forEach(key => {
                 const speed = speeds[key];
-                const translateY = -scrollY * speed;
+                const translateY = (scrollY - targetScroll) * speed;
                 layers[key].style.transform = `translateY(${translateY}px)`;
             });
 
