@@ -36,7 +36,6 @@
 
         /* Gradient Overlay for Readability */
         .overlay {
-            background: linear-gradient(to bottom, rgba(16, 20, 28, 0.3), rgba(16, 20, 28, 0.8));
             position: absolute;
             top: 0;
             left: 0;
@@ -47,7 +46,9 @@
 
         /* Smooth reveal animation classes */
         .reveal {
-            opacity: 0;
+            background: linear-gradient(to bottom, rgba(16, 20, 28, 0.3), rgba(16, 20, 28, 0.8));
+            border-radius: 20px;
+            padding: 30px;
             transform: translateY(-40px);
             transition: all 1s ease-out;
         }
@@ -99,7 +100,8 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background-size: contain;
+            transform: scale(2);
+            background-size: cover;
             background-position: center bottom;
             background-repeat: no-repeat;
             will-change: transform;
@@ -146,6 +148,8 @@
             </button>
         </div>
     </nav>
+
+    <main >
 
     <!-- SECTION 1: PARALLAX HERO -->
     <section id="parallax-hero">
@@ -354,6 +358,7 @@
             </div>
         </div>
     </section>
+</main>
 
     <!-- SECTION 7: FOOTER / CONTACT - THE GRASS -->
     <footer id="contact" class="min-h-[60vh] flex flex-col justify-center relative text-center py-20">
