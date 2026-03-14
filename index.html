@@ -80,7 +80,6 @@
         #parallax-hero {
             position: relative;
             height: 100vh;
-            overflow: hidden;
         }
 
         #parallax-bg {
@@ -90,7 +89,6 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            overflow: hidden;
             background-color: #0f172a;
         }
 
@@ -100,8 +98,8 @@
             left: 0;
             width: 100%;
             height: auto;
-            // object-fit: cover;
-            // object-position: center bottom;
+            /* object-fit: cover; */
+            /* object-position: center bottom; */
             will-change: transform;
             pointer-events: none;
         }
@@ -159,8 +157,6 @@
                 src="images/mountains.png" alt="">
             <img class="parallax-layer" id="layer-trees" data-direction="down" data-speed="0.35" data-offset-vw="20"
                 src="images/trees.png" alt="">
-            <img class="parallax-layer" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vw="66"
-                src="images/grass.png" alt="">
             <div class="overlay"></div>
         </div>
 
@@ -189,9 +185,12 @@
         </header>
     </section>
 
-    <!-- SECTION 2: TEXT CONTENT - EARTH CONNECTION -->
-    <section id="about" class="py-24 bg-slate-900 relative">
-        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+    <!-- SECTION 2: TEXT CONTENT - EARTH CONNECTION AND BEYOND IN THE GRASS LAYER -->
+    <div class="parallax-layer w-full flex flex-col z-20 pointer-events-auto" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vw="66" style="-webkit-transform: translate3d(0,0,0);">
+        <img src="images/grass.png" alt="" class="w-full h-auto block">
+        <div class="bg-slate-900 flex-1 w-full relative -top-1 pb-32 mb-[-72vh]">
+            <section id="about" class="py-24 bg-slate-900 relative">
+                <div class="max-w-4xl mx-auto px-6 text-center reveal">
             <i data-lucide="flower" class="w-12 h-12 text-orange-400 mx-auto mb-6 opacity-80"></i>
             <h2 class="font-heading text-4xl text-orange-100 mb-8">The Sound of the Earth</h2>
             <p class="text-xl text-slate-400 leading-loose mb-6">
@@ -394,6 +393,9 @@
         </div>
     </footer>
 
+        </div>
+    </div>
+
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
@@ -401,7 +403,7 @@
         // Parallax Configuration
         const bgContainer = document.getElementById('parallax-bg');
         const parallaxLayers = Array.from(
-            document.querySelectorAll('#parallax-bg .parallax-layer')
+            document.querySelectorAll('.parallax-layer')
         );
 
         function updateParallax() {
