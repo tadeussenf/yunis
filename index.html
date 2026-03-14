@@ -99,12 +99,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 120%;
-            transform: scale(2);
-            background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
+            height: auto;
+            // object-fit: cover;
+            // object-position: center bottom;
             will-change: transform;
+            pointer-events: none;
         }
 
         #parallax-hero header {
@@ -154,14 +153,14 @@
     <!-- SECTION 1: PARALLAX HERO -->
     <section id="parallax-hero">
         <div id="parallax-bg">
-            <div class="parallax-layer" id="layer-sky" data-direction="down" data-speed="0.6"
-                style="background-image: url('images/sky.png');"></div>
-            <div class="parallax-layer" id="layer-mountains" data-direction="down" data-speed="0.5"
-                style="background-image: url('images/mountains.png');"></div>
-            <div class="parallax-layer" id="layer-trees" data-direction="down" data-speed="0.35"
-                style="background-image: url('images/trees.png');"></div>
-            <div class="parallax-layer" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vw="20"
-                style="background-image: url('images/grass.png');"></div>
+            <img class="parallax-layer" id="layer-sky" data-direction="down" data-speed="0.6" data-offset-vw="0"
+                src="images/sky.png" alt="">
+            <img class="parallax-layer" id="layer-mountains" data-direction="down" data-speed="0.5" data-offset-vw="10"
+                src="images/mountains.png" alt="">
+            <img class="parallax-layer" id="layer-trees" data-direction="down" data-speed="0.35" data-offset-vw="20"
+                src="images/trees.png" alt="">
+            <img class="parallax-layer" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vw="66"
+                src="images/grass.png" alt="">
             <div class="overlay"></div>
         </div>
 
