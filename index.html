@@ -4,22 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tam Tam Gong | Spiritual Soundscapes</title>
+    <title>KAYAM | Falafel Pop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:wght@300..800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Custom Font Assignments */
-        .font-heading {
-            font-family: 'Cinzel', serif;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kayam: {
+                            bg: '#0c0c1f',
+                            accent: '#b58460',
+                            accentDark: '#94674d',
+                            light: '#c2ceff',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Caveat', 'cursive'],
+                        body: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
         }
-
-        .font-body {
-            font-family: 'Quicksand', sans-serif;
+    </script>
+    <style>
+        body {
+            background-color: #0c0c1f;
+            color: #ffffff;
         }
 
         /* Parallax Utility Class */
@@ -30,8 +44,6 @@
             background-size: cover;
             position: relative;
             z-index: 0;
-            /* Enhance depth perception */
-            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
         }
 
         /* Gradient Overlay for Readability */
@@ -42,14 +54,13 @@
             right: 0;
             bottom: 0;
             z-index: 1;
+            background: linear-gradient(to bottom, rgba(12, 12, 31, 0.4), rgba(12, 12, 31, 1));
         }
 
         /* Smooth reveal animation classes */
         .reveal {
-            background: linear-gradient(to bottom, rgba(16, 20, 28, 0.3), rgba(16, 20, 28, 0.8));
-            border-radius: 20px;
-            padding: 30px;
-            transform: translateY(-40px);
+            opacity: 0;
+            transform: translateY(40px);
             transition: all 1s ease-out;
         }
 
@@ -61,19 +72,14 @@
         /* Custom Audio Player Styling */
         .audio-track {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(181, 132, 96, 0.2);
             transition: all 0.3s ease;
         }
 
         .audio-track:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 100, 100, 0.3);
-        }
-
-        /* Glow effect for the 'Gong' feel */
-        .glow-text {
-            text-shadow: 0 0 20px rgba(255, 160, 122, 0.4);
+            background: rgba(181, 132, 96, 0.1);
+            border-color: rgba(181, 132, 96, 0.5);
         }
 
         /* Parallax Hero */
@@ -88,23 +94,12 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            background-color: #0f172a;
-        }
-
-        .parallax-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
             height: 120%;
-            transform: scale(2);
+            z-index: 0;
+            background-image: url('images/Gemini_Generated_Image_c0gm2lc0gm2lc0gm.png');
             background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            will-change: transform;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         #parallax-hero header {
@@ -112,325 +107,254 @@
             z-index: 1;
         }
 
-        /* Specific section adjustments for visibility */
         .content-card {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(12, 12, 31, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(181, 132, 96, 0.2);
+            border-radius: 16px;
+        }
+
+        /* Swirly divider */
+        .swirl-divider {
+            width: 60px;
+            height: 4px;
+            background-color: #b58460;
+            margin: 1.5rem auto;
+            border-radius: 2px;
         }
     </style>
 </head>
 
-<body class="bg-slate-900 text-slate-100 font-body antialiased overflow-x-hidden">
+<body class="font-body antialiased overflow-x-hidden">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 p-6" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#"
-                class="font-heading text-2xl tracking-widest text-orange-100 hover:text-orange-300 transition-colors uppercase">
-                Tam Tam <span class="text-orange-500">Gong</span>
+            <a href="#" class="font-heading text-4xl tracking-wider text-kayam-accent hover:text-kayam-light transition-colors">
+                KAYAM
             </a>
 
-            <div class="hidden md:flex space-x-8">
-                <a href="#about"
-                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Journey</a>
-                <a href="#music"
-                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Soundscapes</a>
-                <a href="#events"
-                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Gatherings</a>
-                <a href="#contact"
-                    class="hover:text-orange-300 transition-colors tracking-wide text-sm uppercase">Connect</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">About</a>
+                <a href="#falafel-pop" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">Falafel Pop</a>
+                <a href="#releases" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">Releases</a>
+                <a href="#videos" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">Videos</a>
+                <a href="#live" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">Live</a>
+                <a href="#contact" class="hover:text-kayam-accent transition-colors tracking-wide text-sm uppercase">Contact</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-orange-100">
+            <button class="md:hidden text-kayam-accent">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
     </nav>
 
-    <main >
+    <main>
 
     <!-- SECTION 1: PARALLAX HERO -->
     <section id="parallax-hero">
-        <div id="parallax-bg">
-            <div class="parallax-layer" id="layer-sky" data-direction="down" data-speed="0.6"
-                style="background-image: url('images/sky.png');"></div>
-            <div class="parallax-layer" id="layer-mountains" data-direction="down" data-speed="0.5"
-                style="background-image: url('images/mountains.png');"></div>
-            <div class="parallax-layer" id="layer-trees" data-direction="down" data-speed="0.35"
-                style="background-image: url('images/trees.png');"></div>
-            <div class="parallax-layer" id="layer-grass" data-direction="up" data-speed="0.72" data-offset-vw="20"
-                style="background-image: url('images/grass.png');"></div>
-            <div class="overlay"></div>
-        </div>
+        <div id="parallax-bg"></div>
+        <div class="overlay"></div>
 
-        <header class="h-full flex items-center justify-center relative">
+        <header class="h-full flex flex-col items-center justify-center relative pb-20">
             <div class="relative z-10 text-center px-4 reveal">
-            <p class="text-orange-300 tracking-[0.3em] text-sm md:text-lg mb-4 uppercase">Vibration &bull; Earth &bull;
-                Spirit</p>
-            <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl mb-6 text-white glow-text">
-                Resonance
-            </h1>
-            <p class="max-w-xl mx-auto text-lg md:text-xl text-slate-200 leading-relaxed font-light">
-                A journey through sound, connecting the heartbeat of the earth with the silence of the cosmos.
-            </p>
-            <div class="mt-10">
-                <a href="#music"
-                    class="inline-block px-8 py-3 border border-orange-400 text-orange-100 hover:bg-orange-500 hover:text-white transition-all duration-300 uppercase tracking-widest text-xs rounded-full">
-                    Listen Now
-                </a>
-            </div>
+                <p class="text-kayam-accent tracking-[0.3em] text-sm md:text-lg mb-4 uppercase font-bold">Siblings • Music • Falafel Pop</p>
+                <h1 class="font-heading text-7xl md:text-9xl mb-4 text-white drop-shadow-lg">
+                    KAYAM
+                </h1>
+                <p class="max-w-xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                    A fusion of genres, a near obsession for chickpeas, and much love.
+                </p>
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-orange-200/50">
-                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-kayam-accent/80">
+                <i data-lucide="chevron-down" class="w-10 h-10"></i>
             </div>
         </header>
     </section>
 
-    <!-- SECTION 2: TEXT CONTENT - EARTH CONNECTION -->
-    <section id="about" class="py-24 bg-slate-900 relative">
+    <!-- SECTION 2: ABOUT -->
+    <section id="about" class="py-24 relative z-10 bg-kayam-bg">
         <div class="max-w-4xl mx-auto px-6 text-center reveal">
-            <i data-lucide="flower" class="w-12 h-12 text-orange-400 mx-auto mb-6 opacity-80"></i>
-            <h2 class="font-heading text-4xl text-orange-100 mb-8">The Sound of the Earth</h2>
-            <p class="text-xl text-slate-400 leading-loose mb-6">
-                In the space between thoughts, there is a vibration. My music is not just heard, but felt—a bridge
-                between the ancient wisdom of the mountains and the gentle breath of the forest.
+            <h2 class="font-heading text-6xl text-kayam-light mb-4">About</h2>
+            <div class="swirl-divider"></div>
+            <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                »KAYAM is the musical duo of siblings Kim and Mike Rauss, playing what they affectionately label Falafel Pop: a fusion of the genres they enjoy, a near obsession for chickpeas and much love.«
             </p>
-            <p class="text-lg text-slate-500 leading-loose">
-                Using the primal resonance of the Tam Tam Gong, I craft soundscapes for yoga, deep meditation, and
-                communal healing. Each performance is a painting in sound, textured with the colors of dusk and the
-                peace of nature.
+            <p class="text-lg text-gray-400 leading-loose">
+                The siblings had a cross-cultural upbringing, living at various stages in England, Germany and Israel, and the wanderlust they experienced in their early years has no doubt left an impression on their approach to music making and live performance. Kim sings and plays the Celtic Harp. Mike plays guitar, sings and builds the loops with guitar percussion and the occasional beatboxing.
             </p>
         </div>
     </section>
 
-    <!-- SECTION 3: PARALLAX - THE MOUNTAINS -->
-    <section class="min-h-[70vh] flex items-center">
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="content-card p-10 rounded-lg border-l-4 border-orange-500 reveal">
-                <h3 class="font-heading text-3xl mb-4 text-orange-100">Deep Meditation</h3>
-                <p class="text-slate-300 leading-relaxed mb-6">
-                    Like the stillness of a mountain peak at dusk, these sessions are designed to ground your spirit.
-                    The low frequencies of the gong resonate with the root chakra, creating a profound sense of safety
-                    and stability.
+    <!-- SECTION 3: FALAFEL POP -->
+    <section id="falafel-pop" class="py-24 relative parallax-section" style="background-image: url('images/Gemini_Generated_Image_c0gm2lc0gm2lc0gm.png');">
+        <div class="absolute inset-0 bg-kayam-bg/90"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="content-card p-10 reveal">
+                <h3 class="font-heading text-5xl mb-4 text-kayam-accent">Falafel Pop</h3>
+                <div class="w-16 h-1 bg-kayam-light mb-6 rounded"></div>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    To free ourselves from specific genres, we call our music Falafel Pop. Some of it is crunchy, some is breezy. Most of it is atmospheric and some is even quite bouncy. Plus, it’s vegan.
                 </p>
-                <a href="#"
-                    class="text-orange-400 hover:text-orange-300 uppercase text-xs tracking-widest border-b border-orange-400 pb-1">Explore
-                    Classes</a>
             </div>
-            <!-- Empty column to let the mountain image show through -->
-            <div></div>
+            <!-- Empty column to let background show through -->
+            <div class="hidden md:block"></div>
         </div>
     </section>
 
-    <!-- SECTION 4: MUSIC PLAYLIST -->
-    <section id="music" class="py-24 bg-slate-950">
+    <!-- SECTION 4: RELEASES -->
+    <section id="releases" class="py-24 bg-kayam-bg">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <span class="text-orange-500 uppercase tracking-widest text-xs font-bold">Discography</span>
-                <h2 class="font-heading text-4xl md:text-5xl mt-3 text-slate-100">Sonic Journeys</h2>
+                <span class="text-kayam-accentDark uppercase tracking-widest text-sm font-bold">Albums & EPs</span>
+                <h2 class="font-heading text-6xl mt-2 text-white">Discography</h2>
+                <div class="swirl-divider"></div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Track 1 -->
-                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal">
-                    <div
-                        class="w-16 h-16 bg-orange-900/30 rounded-full flex items-center justify-center text-orange-400 flex-shrink-0">
-                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                <!-- Track 1: Omens -->
+                <div class="audio-track p-8 rounded-2xl flex flex-col items-center text-center space-y-4 reveal border-t-4 border-kayam-accent">
+                    <div class="w-24 h-24 bg-kayam-bg rounded-full flex items-center justify-center text-kayam-accent border-2 border-kayam-accentDark shadow-lg shadow-kayam-accent/20">
+                        <i data-lucide="disc" class="w-12 h-12"></i>
                     </div>
                     <div>
-                        <h4 class="font-heading text-xl text-slate-200">Red Mountain Dusk</h4>
-                        <p class="text-sm text-slate-500 mt-1">Gong & Wind Chimes • 12:00</p>
+                        <h4 class="font-heading text-4xl text-kayam-light">Omens</h4>
+                        <p class="text-sm text-gray-400 mt-2 uppercase tracking-widest">2023 • 39:21</p>
                     </div>
-                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                    <p class="text-gray-300 text-sm mt-4">
+                        Omens is our 2nd Album - or better said, our 2nd child. The songs are collections of moments from various travels and places.
+                    </p>
+                    <button class="mt-4 px-6 py-2 border border-kayam-accent text-kayam-accent hover:bg-kayam-accent hover:text-kayam-bg transition-colors rounded-full text-sm uppercase tracking-widest font-bold">
+                        Stream / Buy
+                    </button>
                 </div>
 
-                <!-- Track 2 -->
-                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
-                    style="transition-delay: 100ms;">
-                    <div
-                        class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-400 flex-shrink-0">
-                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
+                <!-- Track 2: Sand to Snow -->
+                <div class="audio-track p-8 rounded-2xl flex flex-col items-center text-center space-y-4 reveal border-t-4 border-kayam-light" style="transition-delay: 100ms;">
+                    <div class="w-24 h-24 bg-kayam-bg rounded-full flex items-center justify-center text-kayam-light border-2 border-gray-600 shadow-lg shadow-kayam-light/20">
+                        <i data-lucide="disc" class="w-12 h-12"></i>
                     </div>
                     <div>
-                        <h4 class="font-heading text-xl text-slate-200">Forest Awakening</h4>
-                        <p class="text-sm text-slate-500 mt-1">Flute & Nature Sounds • 08:45</p>
+                        <h4 class="font-heading text-4xl text-kayam-light">Sand to Snow</h4>
+                        <p class="text-sm text-gray-400 mt-2 uppercase tracking-widest">2018 • 37 min</p>
                     </div>
-                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
-                </div>
-
-                <!-- Track 3 -->
-                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
-                    style="transition-delay: 200ms;">
-                    <div
-                        class="w-16 h-16 bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-400 flex-shrink-0">
-                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading text-xl text-slate-200">Root Chakra Healing</h4>
-                        <p class="text-sm text-slate-500 mt-1">Deep Tam Tam • 24:00</p>
-                    </div>
-                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
-                </div>
-
-                <!-- Track 4 -->
-                <div class="audio-track p-6 rounded-xl flex items-center space-x-6 reveal"
-                    style="transition-delay: 300ms;">
-                    <div
-                        class="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center text-purple-400 flex-shrink-0">
-                        <i data-lucide="play" class="w-6 h-6 ml-1"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading text-xl text-slate-200">Traveling Spirit</h4>
-                        <p class="text-sm text-slate-500 mt-1">Ambient Electronic • 05:30</p>
-                    </div>
-                    <div class="ml-auto text-slate-600 text-xs tracking-widest">STREAM</div>
+                    <p class="text-gray-300 text-sm mt-4">
+                        Our debut Album. A creation that came from many different places and experiences. A reflection of our growth, from snow to sand.
+                    </p>
+                    <button class="mt-4 px-6 py-2 border border-kayam-light text-kayam-light hover:bg-kayam-light hover:text-kayam-bg transition-colors rounded-full text-sm uppercase tracking-widest font-bold">
+                        Stream / Buy
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: PARALLAX - THE FOREST -->
-    <section class="min-h-[70vh] flex items-center justify-end">
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <!-- Empty column -->
-            <div></div>
-            <div class="content-card p-10 rounded-lg border-r-4 border-blue-400 reveal">
-                <h3 class="font-heading text-3xl mb-4 text-blue-100">Community & Nature</h3>
-                <p class="text-slate-300 leading-relaxed mb-6">
-                    We are not separate from the wild. In our forest retreats, we use yoga and sound to dissolve the
-                    barriers between self and other, finding peace in the collective breath of the community.
-                </p>
-                <div class="flex space-x-4">
-                    <span
-                        class="px-3 py-1 bg-blue-900/50 text-blue-200 text-xs rounded uppercase tracking-wider">Yoga</span>
-                    <span
-                        class="px-3 py-1 bg-blue-900/50 text-blue-200 text-xs rounded uppercase tracking-wider">Retreats</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- SECTION 5: LIVE EVENTS -->
+    <section id="live" class="py-24 bg-[#080915] relative overflow-hidden">
+        <!-- Abstract shape decoration -->
+        <div class="absolute -right-20 top-20 w-64 h-64 bg-kayam-accent/5 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 bottom-20 w-64 h-64 bg-kayam-light/5 rounded-full blur-3xl"></div>
 
-    <!-- SECTION 6: EVENTS -->
-    <section id="events" class="py-24 bg-slate-900">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="font-heading text-4xl text-center text-slate-100 mb-12 reveal">Upcoming Gatherings</h2>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="font-heading text-6xl text-center text-kayam-light mb-4 reveal">Live Gatherings</h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto reveal">These virtual meetings are cool, but meeting face to face is still the best kind of meeting.</p>
 
-            <div class="space-y-6">
+            <div class="space-y-4">
                 <!-- Event 1 -->
-                <div
-                    class="group border-b border-slate-800 pb-6 hover:bg-slate-800/50 transition-colors rounded-lg p-4 cursor-pointer reveal">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <span class="text-orange-500 font-bold block mb-1">OCT 12, 2026</span>
-                            <h3
-                                class="font-heading text-2xl text-slate-200 group-hover:text-orange-200 transition-colors">
-                                Full Moon Gong Bath</h3>
-                            <p class="text-slate-500 text-sm">Sedona, Arizona • The Sanctuary</p>
+                <div class="group border border-gray-800 bg-kayam-bg/50 hover:border-kayam-accent/50 transition-colors rounded-xl p-6 cursor-pointer reveal flex flex-col md:flex-row md:items-center justify-between">
+                    <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                        <div class="text-center w-16">
+                            <span class="text-kayam-accent block text-sm uppercase tracking-wider">May</span>
+                            <span class="text-white font-heading text-4xl">9</span>
                         </div>
-                        <button
-                            class="px-6 py-2 border border-slate-600 rounded-full text-slate-300 hover:border-orange-500 hover:text-orange-500 transition-all text-sm uppercase tracking-wider">
-                            Tickets
-                        </button>
+                        <div class="h-10 w-px bg-gray-800"></div>
+                        <div>
+                            <h3 class="font-heading text-3xl text-gray-200 group-hover:text-kayam-light transition-colors">Rosenheim</h3>
+                            <p class="text-gray-500 text-sm mt-1">Saturday • 20:00 • Rosenheim, DE</p>
+                        </div>
                     </div>
+                    <button class="px-6 py-2 border border-gray-700 rounded-full text-gray-300 hover:border-kayam-accent hover:text-kayam-accent hover:bg-kayam-accent/10 transition-all text-sm uppercase tracking-wider">
+                        More Info
+                    </button>
                 </div>
 
-                <!-- Event 2 -->
-                <div
-                    class="group border-b border-slate-800 pb-6 hover:bg-slate-800/50 transition-colors rounded-lg p-4 cursor-pointer reveal">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <span class="text-orange-500 font-bold block mb-1">NOV 05, 2026</span>
-                            <h3
-                                class="font-heading text-2xl text-slate-200 group-hover:text-orange-200 transition-colors">
-                                Forest Silence Retreat</h3>
-                            <p class="text-slate-500 text-sm">Oregon Cascades • 3 Day Immersion</p>
-                        </div>
-                        <button
-                            class="px-6 py-2 border border-slate-600 rounded-full text-slate-300 hover:border-orange-500 hover:text-orange-500 transition-all text-sm uppercase tracking-wider">
-                            Join Waitlist
-                        </button>
-                    </div>
+                <!-- Empty state -->
+                <div class="text-center py-8 reveal">
+                    <p class="text-gray-500 italic">More dates to be announced soon...</p>
                 </div>
             </div>
         </div>
     </section>
-</main>
 
-    <!-- SECTION 7: FOOTER / CONTACT - THE GRASS -->
-    <footer id="contact" class="min-h-[60vh] flex flex-col justify-center relative text-center py-20">
-        <!-- Optional extra darkness for footer -->
-        <div class="absolute inset-0 bg-slate-900/40 -z-10"></div>
-        <div class="relative z-10 container mx-auto px-6 reveal">
-            <h2 class="font-heading text-5xl text-white mb-8">Connect with the Source</h2>
-            <p class="text-slate-300 max-w-lg mx-auto mb-10 text-lg">
-                Subscribe for new soundscapes, retreat announcements, and moments of peace delivered to your inbox.
+    <!-- SECTION 6: CONTACT & FOOTER -->
+    <footer id="contact" class="bg-kayam-bg relative text-center pt-24 pb-12 border-t border-gray-900">
+        <div class="container mx-auto px-6 reveal">
+            <h2 class="font-heading text-6xl text-kayam-accent mb-6">Get in Touch</h2>
+            <div class="swirl-divider"></div>
+            <p class="text-gray-400 max-w-lg mx-auto mb-12 text-lg">
+                Feel free to contact us if you have any questions, or even just to tell us a nice story. We'll try to get back to you as soon as possible.
             </p>
 
-            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4 mb-16">
-                <input type="email" placeholder="Your Email Address"
-                    class="flex-1 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-orange-400 backdrop-blur-sm">
-                <button
-                    class="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full font-bold uppercase tracking-wider transition-colors shadow-lg shadow-orange-900/50">
-                    Subscribe
+            <form class="max-w-md mx-auto flex flex-col gap-4 mb-16">
+                <input type="text" placeholder="Name*" class="px-6 py-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-kayam-accent transition-colors">
+                <input type="email" placeholder="E-mail*" class="px-6 py-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-kayam-accent transition-colors">
+                <textarea placeholder="Message" rows="4" class="px-6 py-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-kayam-accent transition-colors"></textarea>
+                <button class="mt-2 px-8 py-4 bg-kayam-accent hover:bg-kayam-accentDark text-kayam-bg rounded-lg font-bold uppercase tracking-widest transition-colors">
+                    Submit
                 </button>
             </form>
 
-            <div class="flex justify-center space-x-8 text-slate-400 mb-8">
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram"
-                        class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="music" class="w-6 h-6"></i></a>
-                <!-- Spotify/Music icon placeholder -->
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            <div class="flex justify-center items-center space-x-10 text-gray-500 mb-12">
+                <a href="#" class="hover:text-kayam-accent transition-colors flex flex-col items-center group">
+                    <i data-lucide="instagram" class="w-6 h-6 mb-2"></i>
+                    <span class="text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Instagram</span>
+                </a>
+                <a href="#" class="hover:text-kayam-accent transition-colors flex flex-col items-center group">
+                    <i data-lucide="youtube" class="w-6 h-6 mb-2"></i>
+                    <span class="text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">YouTube</span>
+                </a>
+                <a href="#" class="hover:text-kayam-accent transition-colors flex flex-col items-center group">
+                    <i data-lucide="music" class="w-6 h-6 mb-2"></i>
+                    <span class="text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Spotify</span>
+                </a>
+                <a href="#" class="hover:text-kayam-accent transition-colors flex flex-col items-center group">
+                    <i data-lucide="mail" class="w-6 h-6 mb-2"></i>
+                    <span class="text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Email</span>
+                </a>
             </div>
 
-            <p class="text-slate-600 text-sm">
-                &copy; 2026 Tam Tam Gong Music. All rights reserved. <br>
-                <span class="text-xs opacity-50">Designed with Spirit & Code.</span>
+            <p class="text-gray-600 text-sm">
+                &copy; 2023 KAYAM. All rights reserved. <br>
+                <span class="text-xs opacity-50 block mt-2">Falafel Pop since 2018</span>
             </p>
         </div>
     </footer>
+    </main>
 
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Parallax Configuration
-        const bgContainer = document.getElementById('parallax-bg');
-        const parallaxLayers = Array.from(
-            document.querySelectorAll('#parallax-bg .parallax-layer')
-        );
-
-        function updateParallax() {
+        // Parallax & Reveal Effects
+        function updateEffects() {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
 
-            // Move layers upward as the user scrolls down, only within the hero viewport
-            const clampedScroll = Math.min(scrollY, viewportHeight);
-            parallaxLayers.forEach(layer => {
-                const speed = parseFloat(layer.dataset.speed || '0.2');
-                const direction = layer.dataset.direction === 'down' ? 1 : -1;
-                const offsetPx = parseFloat(layer.dataset.offset || '0');
-                const offsetVw = parseFloat(layer.dataset.offsetVw || '0');
-                const offsetVh = parseFloat(layer.dataset.offsetVh || '0');
-                const baseOffset =
-                    offsetPx +
-                    (offsetVw * (window.innerWidth / 100)) +
-                    (offsetVh * (window.innerHeight / 100));
-                const translateY = baseOffset + direction * clampedScroll * speed;
-                layer.style.transform = `translateY(${translateY}px)`;
-            });
+            // Simple background Parallax (if needed beyond CSS fixed)
+            // Mostly handled by background-attachment: fixed now for simplicity and smoothness
 
             // Navbar Scroll Effect
             const navbar = document.getElementById('navbar');
             if (scrollY > 50) {
-                navbar.classList.add('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.add('bg-kayam-bg/95', 'backdrop-blur-md', 'shadow-xl', 'border-b', 'border-gray-800');
+                navbar.classList.remove('p-6');
+                navbar.classList.add('p-4');
             } else {
-                navbar.classList.remove('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-kayam-bg/95', 'backdrop-blur-md', 'shadow-xl', 'border-b', 'border-gray-800', 'p-4');
+                navbar.classList.add('p-6');
             }
 
             // Reveal Animation Trigger
@@ -444,12 +368,11 @@
             }
         }
 
-        window.addEventListener("scroll", updateParallax);
-        window.addEventListener("resize", updateParallax);
+        window.addEventListener("scroll", updateEffects);
+        window.addEventListener("resize", updateEffects);
 
         // Initial Trigger
-        updateParallax();
+        updateEffects();
     </script>
 </body>
-
 </html>
