@@ -1,0 +1,495 @@
+:root {
+    --color-bg-light: #FAF7F2;
+    --color-text-dark: #3A3A3A;
+    --color-text-light: #6F6F6F;
+    --color-olive: #6D7F54;
+    --color-terracotta: #D08A72;
+    --color-sand: #EAE3CA;
+    
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: transparent;
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.page-container {
+    max-width: 1400px;
+    width: 95%;
+    margin: 2rem auto;
+    background-color: var(--color-bg-light);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08); /* Soft floating shadow */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Watercolor Texture */
+.bg-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/images/watercolor_texture_1775281219528.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, .section-title {
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: var(--color-olive);
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    font-weight: 300;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-terracotta);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: stroke 0.3s ease;
+    stroke: var(--color-text-dark);
+}
+
+.icon:hover {
+    stroke: var(--color-terracotta);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-terracotta);
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #B87661;
+    transform: translateY(-2px);
+}
+
+/* Hero Section (Parallax) */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: absolute;
+    top: 15%;
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    color: var(--color-olive);
+    letter-spacing: 4px;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+    overflow: hidden;
+    /* This creates the wavy bottom */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center top;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-overlay h2 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Wavy Mask overlay trick */
+.wave-bottom {
+    position: absolute;
+    bottom: -5px; /* Offset subpixel rendering */
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 3;
+}
+.wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 120px; /* Adjust based on wave thickness */
+}
+
+/* Retreats Section */
+.retreats-section {
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    background: transparent;
+}
+
+.retreats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.retreat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--space-md);
+}
+
+.retreat-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.retreat-card .date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.retreat-card .desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+/* Harmony Info Section */
+.harmony-info {
+    display: flex;
+    padding: var(--space-xl) var(--space-lg);
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.image-column, .text-column {
+    flex: 1;
+}
+
+.arch-image {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 200px 200px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.arch-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.05); /* Slight zoom for image */
+    transition: transform 0.5s ease;
+}
+
+.arch-image:hover img {
+    transform: scale(1);
+}
+
+.text-column .quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+}
+
+.text-column .desc {
+    margin-bottom: var(--space-md);
+}
+
+/* Shop Section */
+.shop-section {
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.shop-item {
+    text-align: center;
+}
+
+.shop-item h3 {
+    margin-top: var(--space-md);
+    font-size: 1.3rem;
+}
+
+.shop-item .desc, .shop-item .price {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.shop-item .price {
+    color: var(--color-terracotta);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Masks */
+.arch-mask {
+    border-radius: 150px 150px 0 0;
+    aspect-ratio: 3/4;
+}
+
+.circle-mask {
+    border-radius: 50%;
+}
+
+.square-mask {
+    border-radius: 0;
+}
+
+/* Albums List at bottom */
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.album-item {
+    position: relative;
+    text-align: center;
+}
+
+.album-item h4 {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Vinyl Hover Effect */
+.vinyl-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.album-cover {
+    position: relative;
+    z-index: 2;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+.vinyl-record {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    height: 90%;
+    background-color: #111;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.2), 0 0 5px rgba(0,0,0,0.5);
+    /* texture line rings */
+    background-image: repeating-radial-gradient(
+        #111,
+        #111 2px,
+        #1a1a1a 3px,
+        #111 4px
+    );
+}
+
+.vinyl-inner {
+    width: 30%;
+    height: 30%;
+    background-color: var(--color-terracotta);
+    border-radius: 50%;
+    border: 2px solid #111;
+    position: relative;
+}
+.vinyl-inner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.vinyl-wrapper:hover .vinyl-record {
+    transform: translateX(45%) rotate(180deg);
+}
+
+
+/* Fade Up Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .harmony-info {
+        flex-direction: column;
+    }
+    
+    .shop-grid, .albums-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
