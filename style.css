@@ -20,6 +20,10 @@
     --space-xl: 10rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
