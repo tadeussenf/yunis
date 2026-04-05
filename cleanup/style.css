@@ -60,6 +60,7 @@ h1 {
 }
 
 .section-subtitle {
+    text-align: center;
     font-family: var(--font-subtitle);
     font-size: 1.3rem;
     color: var(--color-golden);
@@ -238,6 +239,7 @@ section {
 
 /* Buttons */
 .btn-primary {
+    text-transform: uppercase;
     display: inline-block;
     background-color: transparent;
     color: var(--color-terracotta);
