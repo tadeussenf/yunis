@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 
-    <!-- Background Watercolor Texture Overlay -->
-    <div class="bg-texture"></div>
+<!-- Background Watercolor Texture Overlay -->
+<div class="bg-texture"></div>
 
-    <div class="page-container">
+<div class="page-container">
+    <header id="home" class="hero-section preserve-3d">
 
         <!-- Decorations -->
         <div class="decorations">
@@ -24,50 +26,68 @@
             <img src="assets/images/smudge_orange_1775364639186.png" alt="" class="decor smudge-2">
         </div>
 
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#spiritual">SPIRITUAL</a></li>
-            <li><a href="#resources">RESOURCES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <div class="nav-icons">
-            <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <svg class="icon instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            <svg class="icon shop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-        </div>
-    </nav>
-
-    <header id="home" class="hero-section preserve-3d">
-        <div class="hero-text fade-up">
-            <h1>HARMONY SOUNDS</h1>
-        </div>
-        
-        <div class="hero-image-wrapper parallax-layer">
-            <!-- Using the generated hero image -->
-            <img src="assets/images/hero_musician_new_1775281856985.png" alt="Musician on mountain" class="hero-image">
-            <div class="hero-overlay">
-                <h2>MUSIC FOR THE SOUL & EARTH</h2>
-            </div>
-            <!-- Wavy bottom edge -->
-            <div class="wave-bottom">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="#FAF7F2" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,192C672,181,768,171,864,181.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#spiritual">SPIRITUAL</a></li>
+                <li><a href="#resources">RESOURCES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <svg class="icon instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <svg class="icon shop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
                 </svg>
             </div>
+        </nav>
+
+        <div class="hero-text">
+            <h1>HARMONY SOUNDS</h1>
         </div>
     </header>
+
+
+    <!--        <div class="hero-image-wrapper parallax-layer">-->
+    <!--            &lt;!&ndash; Using the generated hero image &ndash;&gt;-->
+    <!--            <img src="assets/images/hero_musician_new_1775281856985.png" alt="Musician on mountain" class="hero-image">-->
+    <!--            <div class="hero-overlay">-->
+    <!--                <h2>MUSIC FOR THE SOUL & EARTH</h2>-->
+    <!--            </div>-->
+    <!--            &lt;!&ndash; Wavy bottom edge &ndash;&gt;-->
+    <!--            <div class="wave-bottom">-->
+    <!--                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">-->
+    <!--                    <path fill="#FAF7F2" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,192C672,181,768,171,864,181.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>-->
+    <!--                </svg>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
     <main>
         <section class="retreats-section fade-up">
             <h2 class="section-title">RETREATS & GATHERINGS</h2>
             <p class="section-subtitle">Upcoming yoga & sounding events</p>
-            
+
             <div class="retreats-grid">
                 <div class="retreat-card">
                     <div class="icon-wrapper leaves-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                        </svg>
                     </div>
                     <h3>Yoga Fitvar Events</h3>
                     <p class="date">Novemby, April 18, 2023</p>
@@ -76,7 +96,13 @@
 
                 <div class="retreat-card">
                     <div class="icon-wrapper om-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B88A75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M9 12a3 3 0 0 0 6 0"></path><path d="M9 8a3 3 0 1 1 6 0"></path><path d="M12 20v-4"></path></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#B88A75" stroke-width="1.5" stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                            <path d="M9 12a3 3 0 0 0 6 0"></path>
+                            <path d="M9 8a3 3 0 1 1 6 0"></path>
+                            <path d="M12 20v-4"></path>
+                        </svg>
                     </div>
                     <h3>Sound Healing Events</h3>
                     <p class="date">Novemby, April 12, 2023</p>
@@ -86,7 +112,10 @@
 
                 <div class="retreat-card">
                     <div class="icon-wrapper mountain-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                        </svg>
                     </div>
                     <h3>Sound Healing Events</h3>
                     <p class="date">Novemby, April 14, 2023</p>
@@ -103,8 +132,12 @@
             </div>
             <div class="text-column">
                 <h2 class="section-title">HARMONY SOUNDS</h2>
-                <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor mominaiituns ut labore et dolore magna Ut ein ad minim veniam, quis nostrud sii alitme ex een tompot alemkstion a commodo consequat."</p>
-                <p class="desc">Harmony sounds is a mesis, naturs en aquor music senil poar-ar foram muan aware, alecion din: rthi a natim. srelas mollaicet voluptate et athers, ghoem mature and pusnat rapherentent alcxpe fulinittunts.</p>
+                <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    mominaiituns ut labore et dolore magna Ut ein ad minim veniam, quis nostrud sii alitme ex een tompot
+                    alemkstion a commodo consequat."</p>
+                <p class="desc">Harmony sounds is a mesis, naturs en aquor music senil poar-ar foram muan aware, alecion
+                    din: rthi a natim. srelas mollaicet voluptate et athers, ghoem mature and pusnat rapherentent alcxpe
+                    fulinittunts.</p>
                 <a href="#" class="btn-primary">LEARN MORE</a>
             </div>
         </section>
@@ -112,7 +145,7 @@
         <section id="shop" class="shop-section fade-up">
             <h2 class="section-title text-center">SHOP</h2>
             <p class="section-subtitle text-center">Organic flowing icons & hand beads</p>
-            
+
             <div class="shop-grid">
                 <!-- Arched Image -->
                 <div class="shop-item">
@@ -174,8 +207,8 @@
             </div>
         </section>
     </main>
-    </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

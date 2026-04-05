@@ -5,10 +5,10 @@
     --color-olive: #596B40; /* Accurate mockup olive green */
     --color-terracotta: #D08A72; /* Warm terracotta/dusty rose */
     --color-sand: #D5D7C7; /* Pale sage green for outer background */
-    
+
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
-    
+
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 5rem;
@@ -22,8 +22,6 @@
 }
 
 body {
-    background: linear-gradient(to right, #D6A066 50%, #98A982 50%);
-    background-attachment: fixed;
     color: var(--color-text-dark);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -36,9 +34,16 @@ body {
     width: 95%;
     margin: 2rem auto;
     background-color: var(--color-bg-light);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.08); /* Soft floating shadow */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08); /* Soft floating shadow */
     position: relative;
     overflow: hidden;
+}
+
+header {
+    background-image: url("assets/bg/Gemini_Generated_Image_ib0geoib0geoib0g.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Background Watercolor Texture */
@@ -48,11 +53,10 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('assets/images/watercolor_texture_1775281219528.png');
+    background-image: url('assets/bg/Gemini_Generated_Image_7muson7muson7mus.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15; /* Subtler texture */
     z-index: -1;
     pointer-events: none;
     mix-blend-mode: multiply; /* Helps it blend with the backdrop color */
@@ -172,8 +176,10 @@ h1, h2, h3, h4, .section-title {
 .btn-primary::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: var(--color-terracotta);
     z-index: -1;
     transition: transform 0.4s ease;
@@ -193,7 +199,7 @@ h1, h2, h3, h4, .section-title {
 /* Hero Section (Parallax) */
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,7 +215,7 @@ h1, h2, h3, h4, .section-title {
 }
 
 .hero-text h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     color: var(--color-olive);
     letter-spacing: 6px;
     animation: splitFade 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -255,7 +261,7 @@ h1, h2, h3, h4, .section-title {
     color: white;
     font-size: 1.5rem;
     letter-spacing: 3px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     animation: splitFade 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s;
     opacity: 0;
     transform: translateY(20px);
@@ -270,11 +276,13 @@ h1, h2, h3, h4, .section-title {
     line-height: 0;
     z-index: 3;
 }
+
 .wave-bottom svg {
     display: block;
     width: 100%;
     height: 120px; /* Adjust based on wave thickness */
 }
+
 .wave-bottom path {
     fill: var(--color-bg-light); /* Match the container background */
 }
@@ -348,7 +356,7 @@ h1, h2, h3, h4, .section-title {
     border-radius: 200px 200px 0 0;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .arch-image img {
@@ -473,7 +481,7 @@ h1, h2, h3, h4, .section-title {
     position: relative;
     z-index: 2;
     background: white;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .vinyl-record {
@@ -489,13 +497,13 @@ h1, h2, h3, h4, .section-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 10px rgba(255,255,255,0.2), 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2), 0 0 5px rgba(0, 0, 0, 0.5);
     /* texture line rings */
     background-image: repeating-radial-gradient(
-        #111,
-        #111 2px,
-        #1a1a1a 3px,
-        #111 4px
+            #111,
+            #111 2px,
+            #1a1a1a 3px,
+            #111 4px
     );
 }
 
@@ -507,6 +515,7 @@ h1, h2, h3, h4, .section-title {
     border: 2px solid #111;
     position: relative;
 }
+
 .vinyl-inner::after {
     content: '';
     position: absolute;
@@ -531,7 +540,7 @@ h1, h2, h3, h4, .section-title {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -542,7 +551,7 @@ h1, h2, h3, h4, .section-title {
 }
 
 .plant-1 {
-    top: 115vh; 
+    top: 115vh;
     left: -100px;
     width: 350px;
     transform: rotate(15deg);
@@ -592,15 +601,15 @@ h1, h2, h3, h4, .section-title {
     .harmony-info {
         flex-direction: column;
     }
-    
+
     .shop-grid, .albums-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .nav-links {
         display: none;
     }
