@@ -33,7 +33,7 @@ body {
     overflow-x: hidden;
     position: relative;
 
-    background-image: url('assets/bg/Gemini_Generated_Image_7muson7muson7mus.png');
+    background-image: url('assets/bg/bg-pattern.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,7 +86,7 @@ header {
     position: relative;
     height: 75vh;
 
-    background-image: url("assets/bg/Gemini_Generated_Image_ib0geoib0geoib0g.png");
+    background-image: url("assets/bg/hero.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -102,7 +102,7 @@ header {
 }
 
 section {
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-lg);
     text-align: center;
     position: relative;
     z-index: 5;
@@ -113,20 +113,32 @@ section {
     display: inline-block;
     margin: var(--space-md) 0;
 }
+.gallery {
+    display: flex;
+    gap: 10px;
+    object-fit: cover;
+    /*flex-direction: column;*/
+    /*justify-content: space-evenly;*/
+}
+
+.gallery-image {
+    max-width: 200px;
+    height: auto;
+}
 
 .decoration {
     position: absolute;
 }
 
 .plant-1 {
-    top: 50%;
+    top: 100%;
     left: -28px;
     width: 20%;
     transform: rotate(2deg);
 }
 
 .smudge-1 {
-    top: 70%;
+    top: 50%;
     right: -150px;
     width: 40%;
     opacity: 0.4;
