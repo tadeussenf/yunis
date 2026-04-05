@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
-          rel="stylesheet">
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"-->
+    <!--          rel="stylesheet">-->
 </head>
 <body>
 
 <div class="page-container">
-    <header id="home">
+    <header>
 
         <nav class="navbar">
             <ul class="nav-links">
@@ -47,6 +47,13 @@
         <div>
             <h1>HARMONY SOUNDS</h1>
         </div>
+
+        <div class="wave-bottom">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#FDFBF7" fill-opacity="1"
+                      d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,192C672,181,768,171,864,181.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
     </header>
 
     <main>
@@ -57,10 +64,11 @@
             <div class="retreats-grid">
                 <div class="retreat-card">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round"
-                             stroke-linejoin="round">
-                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                        <svg viewBox="0 0 50 50" fill="none" stroke="#8fa07a" stroke-width="2" stroke-linecap="round">
+                            <circle cx="25" cy="20" r="12"></circle>
+                            <path d="M25,32 L25,45"></path>
+                            <path d="M18,38 L25,45 L32,38"></path>
+                            <path d="M15,20 Q25,5 35,20"></path>
                         </svg>
                     </div>
                     <h3>Yoga Fitvar Events</h3>
@@ -70,12 +78,8 @@
 
                 <div class="retreat-card">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B88A75" stroke-width="1.5" stroke-linecap="round"
-                             stroke-linejoin="round">
-                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                            <path d="M9 12a3 3 0 0 0 6 0"></path>
-                            <path d="M9 8a3 3 0 1 1 6 0"></path>
-                            <path d="M12 20v-4"></path>
+                        <svg viewBox="0 0 50 50" fill="none" stroke="#c17c5a" stroke-width="1.2" stroke-linecap="round">
+                            <path d="M25,40 Q10,30 10,20 Q10,10 25,15 Q40,10 40,20 Q40,30 25,40Z"></path>
                         </svg>
                     </div>
                     <h3>Sound Healing Events</h3>
@@ -86,9 +90,14 @@
 
                 <div class="retreat-card">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#728461" stroke-width="1.5" stroke-linecap="round"
-                             stroke-linejoin="round">
-                            <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                        <svg viewBox="0 0 50 50" fill="none" stroke="#dbb563" stroke-width="1.2" stroke-linecap="round">
+                            <circle cx="25" cy="15" r="5"></circle>
+                            <circle cx="15" cy="28" r="4"></circle>
+                            <circle cx="35" cy="28" r="4"></circle>
+                            <circle cx="10" cy="40" r="3.5"></circle>
+                            <circle cx="25" cy="38" r="3.5"></circle>
+                            <circle cx="40" cy="40" r="3.5"></circle>
+                            <path d="M25,20 L15,24 M25,20 L35,24 M15,32 L10,36.5 M15,32 L25,34.5 M35,32 L25,34.5 M35,32 L40,36.5"></path>
                         </svg>
                     </div>
                     <h3>Sound Healing Events</h3>
@@ -98,6 +107,15 @@
             </div>
         </section>
     </main>
-
+    <footer style="background:var(--color-bg-dark);padding:3rem 2rem;text-align:center;">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#c9a87c" stroke-width="1" stroke-opacity="0.4" style="margin-bottom:1rem;">
+            <circle cx="20" cy="20" r="15"></circle>
+            <circle cx="20" cy="20" r="8"></circle>
+            <circle cx="20" cy="20" r="2" fill="#c9a87c" fill-opacity="0.4"></circle>
+        </svg>
+        <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--color-terracotta);opacity:0.5;">
+            made with love, under open sky
+        </p>
+    </footer>
 </div>
 </body>
