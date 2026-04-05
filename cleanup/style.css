@@ -85,11 +85,36 @@ h1 {
 header {
     position: relative;
     height: 75vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
-    background-image: url("assets/bg/hero.png");
+header .parallax-bg {
+    position: absolute;
+    top: -10%; 
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+}
+
+header .layer-bg {
+    background-image: url("assets/bg/background.png");
+    background-position: center center;
+}
+
+header .layer-fg {
+    background-image: url("assets/bg/foreground.png");
+    background-position: center bottom;
+}
+
+header > *:not(.parallax-bg):not(.wave-bottom) {
+    position: relative;
+    z-index: 2;
 }
 
 .wave-bottom {
@@ -131,7 +156,7 @@ section {
 }
 
 .plant-1 {
-    top: 100%;
+    top: 0;
     left: -28px;
     width: 20%;
     transform: rotate(2deg);

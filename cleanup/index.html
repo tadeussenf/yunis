@@ -9,7 +9,9 @@
 <body>
 
 <div class="page-container">
-    <header>
+    <header class="hero-header">
+        <div class="parallax-bg layer-bg"></div>
+        <div class="parallax-bg layer-fg"></div>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="/">HOME</a></li>
@@ -55,8 +57,6 @@
 
     <main>
         <section id="about">
-            <img src="assets/images/plant_branch_1775364605554.png" alt="" class="decoration plant-1">
-
             <h2 class="section-title">The Journey Within</h2>
 
             <p>
@@ -85,6 +85,7 @@
         <section id="music"></section>
 
         <section id="activities">
+            <img src="assets/images/plant_branch_1775364605554.png" alt="" class="decoration plant-1">
             <img src="assets/images/smudge_orange_1775364639186.png" alt="" class="decoration smudge-1">
 
             <h2 class="section-title">Learn & Understand</h2>
@@ -148,4 +149,21 @@
         </p>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('scroll', function() {
+        const scrollPosition = window.pageYOffset;
+        const bgLayer = document.querySelector('.layer-bg');
+        const fgLayer = document.querySelector('.layer-fg');
+        
+        // Translate layers to create a parallax effect.
+        // The background moves slower than the foreground.
+        if (bgLayer) {
+            bgLayer.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+        }
+        if (fgLayer) {
+            fgLayer.style.transform = 'translateY(' + (scrollPosition * 0.2) + 'px)';
+        }
+    });
+</script>
 </body>
