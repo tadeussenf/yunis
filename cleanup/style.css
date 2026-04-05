@@ -108,6 +108,29 @@ section {
     background: transparent;
 }
 
+.separator {
+    display: inline-block;
+    margin: var(--space-md) 0;
+}
+
+.decoration {
+    position: absolute;
+}
+
+.plant-1 {
+    top: 50%;
+    left: -28px;
+    width: 20%;
+    transform: rotate(2deg);
+}
+
+.smudge-1 {
+    top: 70%;
+    right: -150px;
+    width: 40%;
+    opacity: 0.4;
+}
+
 .retreats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
