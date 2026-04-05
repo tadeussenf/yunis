@@ -112,9 +112,19 @@ header .layer-fg {
     background-position: center bottom;
 }
 
-header > *:not(.parallax-bg):not(.wave-bottom) {
+header > *:not(.parallax-bg):not(.wave-bottom):not(.wave-top) {
     position: relative;
     z-index: 2;
+}
+
+.wave-top {
+    position: absolute;
+    top: -150px; /* Offset subpixel rendering */
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 3;
+    transform: rotateY(180deg);
 }
 
 .wave-bottom {
@@ -201,9 +211,12 @@ section {
     margin: 0; 
 }
 
-#music .section-title,
-#music .section-subtitle {
+#music .section-title {
     color: var(--color-bg-dark);
+}
+
+#music .section-subtitle {
+    color: var(--color-olive);
 }
 
 .music-player-container {
@@ -424,9 +437,11 @@ section {
     color: var(--color-bg-dark);
 }
 
-#contact .section-title,
-#contact .section-subtitle {
+#contact .section-title {
     color: var(--color-bg-dark);
+}
+#contact .section-subtitle {
+    color: var(--color-olive);
 }
 
 .contact-form {

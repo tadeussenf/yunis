@@ -75,16 +75,18 @@
                 <img class="gallery-image" src="assets/images/photo_5440877095157437847_y.jpg">
                 <img class="gallery-image" src="assets/images/photo_5440877095157437848_y.jpg">
             </div>
-
-            <span class="separator"></span>
-
-            <p class="section-subtitle">— where breath becomes sound —</p>
-
         </section>
 
         <section id="music">
-            <h2 class="section-title">vibrations</h2>
-            <p class="section-subtitle">listen to a sample</p>
+            <div class="wave-top">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#D08A72" fill-opacity="1"
+                          d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,192C672,181,768,171,864,181.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+
+            <h2 class="section-title">Vibrations</h2>
+            <p class="section-subtitle">— where breath becomes sound —</p>
             <div class="music-player-container">
                 <div class="custom-player">
                     <audio id="audio-element">
@@ -105,6 +107,15 @@
                     </div>
                 </div>
             </div>
+
+            <span class="separator"></span>
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#FDFBF7" fill-opacity="1"
+                          d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,192C672,181,768,171,864,181.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+
         </section>
 
         <section id="activities">
@@ -157,11 +168,12 @@
                     <a href="#" class="btn-primary">LEARN MORE</a>
                 </div>
             </div>
+
         </section>
         <section id="contact">
             <h2 class="section-title">Get in Touch</h2>
             <p class="section-subtitle">let's connect</p>
-            
+
             <form class="contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -190,11 +202,11 @@
 </div>
 
 <script>
-    document.addEventListener('scroll', function() {
+    document.addEventListener('scroll', function () {
         const scrollPosition = window.pageYOffset;
         const bgLayer = document.querySelector('.layer-bg');
         const fgLayer = document.querySelector('.layer-fg');
-        
+
         // Translate layers to create a parallax effect.
         // The background moves slower than the foreground.
         if (bgLayer) {
@@ -208,7 +220,7 @@
     // Custom Audio Player UI
     const audio = document.getElementById('audio-element');
     const playBtn = document.getElementById('play-pause-btn');
-    
+
     if (audio && playBtn) {
         const playIcon = playBtn.querySelector('.play-icon');
         const pauseIcon = playBtn.querySelector('.pause-icon');
@@ -259,7 +271,7 @@
             pauseIcon.style.display = 'none';
             progressBar.value = 0;
             currentTimeEl.textContent = '0:00';
-            progressBar.style.background = `rgba(255,255,255,0.2)`;
+            progressBar.style.background = `rgba(255, 255, 255, 0.2)`;
         });
     }
 </script>
