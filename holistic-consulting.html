@@ -9,7 +9,7 @@
 <body>
 <div class="page-container">
     <header style="height: 75vh;">
-        <div class="parallax-bg layer-bg" style="background-image: url('assets/images/holistic_consulting_hero_1775455987597.png'); background-position: center; transform: translateY(-50px);"></div>
+        <div class="parallax-bg layer-bg" style="background-image: url('assets/images/holistic_consulting_hero_1775455987597.png'); background-position: center;"></div>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
@@ -43,5 +43,15 @@
         <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--color-terracotta);opacity:0.5;">made with love, under open sky</p>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('scroll', function () {
+        const scrollPosition = window.pageYOffset;
+        const bgLayer = document.querySelector('.layer-bg');
+        if (bgLayer) {
+            bgLayer.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+        }
+    });
+</script>
 </body>
 </html>

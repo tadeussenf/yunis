@@ -43,5 +43,15 @@
         <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--color-terracotta);opacity:0.5;">made with love, under open sky</p>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('scroll', function () {
+        const scrollPosition = window.pageYOffset;
+        const bgLayer = document.querySelector('.layer-bg');
+        if (bgLayer) {
+            bgLayer.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+        }
+    });
+</script>
 </body>
 </html>
