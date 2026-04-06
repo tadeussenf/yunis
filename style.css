@@ -211,7 +211,7 @@ section {
 #music {
     min-height: 55vh;
     background-image: url('assets/images/cat_headphones.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
     background-color: var(--color-terracotta);
