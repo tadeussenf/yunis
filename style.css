@@ -123,12 +123,12 @@ header > *:not(.parallax-bg):not(.wave-bottom):not(.wave-top) {
 
 .wave-top {
     position: absolute;
-    top: -150px; /* Offset subpixel rendering */
+    top: -70px; /* Offset subpixel rendering */
     left: 0;
     width: 100%;
     line-height: 0;
     z-index: 3;
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
 .wave-bottom {
@@ -209,11 +209,17 @@ section {
 
 /* Music Section */
 #music {
+    background-image: url('assets/images/cat_headphones.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: var(--color-terracotta);
     color: var(--color-text-dark);
     /* Giving it a solid block feel */
     margin: 0; 
+    position: relative;
 }
+
 
 #music .section-title {
     color: var(--color-bg-dark);
