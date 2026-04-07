@@ -1,0 +1,326 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{
+					"slug": "bg-light",
+					"color": "#FDFBF7",
+					"name": "Background Light"
+				},
+				{
+					"slug": "bg-dark",
+					"color": "#1a1208",
+					"name": "Background Dark"
+				},
+				{
+					"slug": "text-dark",
+					"color": "#2F332A",
+					"name": "Text Dark"
+				},
+				{
+					"slug": "text-light",
+					"color": "#8A8881",
+					"name": "Text Light"
+				},
+				{
+					"slug": "olive",
+					"color": "#596B40",
+					"name": "Olive"
+				},
+				{
+					"slug": "terracotta",
+					"color": "#D08A72",
+					"name": "Terracotta"
+				},
+				{
+					"slug": "sand",
+					"color": "#D5D7C7",
+					"name": "Sand"
+				},
+				{
+					"slug": "golden",
+					"color": "#c4973b",
+					"name": "Golden"
+				}
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "'Cormorant Garamond', serif",
+					"name": "Heading",
+					"slug": "heading",
+					"fontFace": [
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2"]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjorg.woff2"]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjYrXhK.woff2"]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"src": ["https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjQWlhvuQWJ.woff2"]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": ["https://fonts.gstatic.com/s/cormorantgaramond/v16/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtL.woff2"]
+						}
+					]
+				},
+				{
+					"fontFamily": "'Philosopher', sans-serif",
+					"name": "Body",
+					"slug": "body",
+					"fontFace": [
+						{
+							"fontFamily": "Philosopher",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/philosopher/v19/vEFV2_5QCWISOJf_SE8OdEg.woff2"]
+						},
+						{
+							"fontFamily": "Philosopher",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/philosopher/v19/vEFI2_5QCWISOJf_SE8Yf5Ledi0.woff2"]
+						},
+						{
+							"fontFamily": "Philosopher",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": ["https://fonts.gstatic.com/s/philosopher/v19/vEFX2_5QCWISOJf_SE8OdE0K0Q.woff2"]
+						}
+					]
+				},
+				{
+					"fontFamily": "'Caveat', cursive",
+					"name": "Accent",
+					"slug": "accent",
+					"fontFace": [
+						{
+							"fontFamily": "Caveat",
+							"fontWeight": "400 600",
+							"fontStyle": "normal",
+							"src": ["https://fonts.gstatic.com/s/caveat/v18/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SIKjYBxPigs.woff2"]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "0.8rem",
+					"name": "Small"
+				},
+				{
+					"slug": "medium",
+					"size": "1rem",
+					"name": "Medium"
+				},
+				{
+					"slug": "large",
+					"size": "1.3rem",
+					"name": "Large"
+				},
+				{
+					"slug": "x-large",
+					"size": "2.5rem",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "xx-large",
+					"size": "2.8rem",
+					"name": "Section Title"
+				}
+			]
+		},
+		"spacing": {
+			"units": ["px", "em", "rem", "vh", "vw", "%"],
+			"spacingSizes": [
+				{
+					"slug": "10",
+					"size": "0.5rem",
+					"name": "Extra Small"
+				},
+				{
+					"slug": "20",
+					"size": "1rem",
+					"name": "Small"
+				},
+				{
+					"slug": "30",
+					"size": "2rem",
+					"name": "Medium"
+				},
+				{
+					"slug": "40",
+					"size": "3rem",
+					"name": "Large"
+				},
+				{
+					"slug": "50",
+					"size": "5rem",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "60",
+					"size": "10rem",
+					"name": "Huge"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1000px",
+			"wideSize": "1000px"
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"background": "#FDFBF7",
+			"text": "#2F332A"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "1rem",
+			"lineHeight": "1.6"
+		},
+		"spacing": {
+			"padding": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontWeight": "500"
+				},
+				"color": {
+					"text": "#596B40"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "2.5rem",
+					"letterSpacing": "6px"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "2.8rem",
+					"letterSpacing": "4px"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "1.5rem"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "#2F332A"
+				},
+				":hover": {
+					"color": {
+						"text": "#D08A72"
+					}
+				}
+			},
+			"button": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "1.1rem",
+					"letterSpacing": "2px",
+					"textTransform": "uppercase"
+				},
+				"color": {
+					"background": "transparent",
+					"text": "#D08A72"
+				},
+				"border": {
+					"color": "#D08A72",
+					"width": "1px",
+					"radius": "40px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.8rem",
+						"right": "2.5rem",
+						"bottom": "0.8rem",
+						"left": "2.5rem"
+					}
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "header-subpage",
+			"title": "Header (Subpage)",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "page-music-lessons",
+			"title": "Music Lessons",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "page-explore-nature",
+			"title": "Explore Nature",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "page-holistic-consulting",
+			"title": "Holistic Consulting",
+			"postTypes": ["page"]
+		}
+	],
+	"patterns": [
+		"yunis/hero-header",
+		"yunis/about-section",
+		"yunis/music-header",
+		"yunis/music-player",
+		"yunis/activities-grid",
+		"yunis/contact-form",
+		"yunis/wave-divider",
+		"yunis/service-page-content"
+	]
+}

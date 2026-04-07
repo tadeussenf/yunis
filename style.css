@@ -1,42 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;500;600&display=swap');
+/*
+Theme Name: Yunis
+Theme URI: https://github.com/tadeussenf/yunis
+Author: Yunis
+Description: A modern WordPress Full Site Editing theme for Yunis — musician, wellness instructor, and guide. Earthy tones, elegant typography, and organic design.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: yunis
+*/
 
-:root {
-    --color-bg-light: #FDFBF7; /* Even lighter off-white for the main container */
-    --color-bg-dark: #1a1208;
-    --color-text-dark: #2F332A; /* Deep dark olive/brown for contrast */
-    --color-text-light: #8A8881;
-    --color-olive: #596B40; /* Accurate mockup olive green */
-    --color-terracotta: #D08A72; /* Warm terracotta/dusty rose */
-    --color-sand: #D5D7C7; /* Pale sage green for outer background */
-    --color-golden: #c4973b;
-
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-subtitle: 'Caveat', cursive;
-    --font-body: 'Philosopher', sans-serif;
-
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 5rem;
-    --space-xl: 10rem;
-}
+/* =========================================
+   Global / Body
+   ========================================= */
 
 html {
     scroll-behavior: smooth;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    color: var(--color-text-dark);
-    font-family: var(--font-body);
-    line-height: 1.6;
     overflow-x: hidden;
-    position: relative;
-
     background-image: url('assets/bg/bg-pattern.png');
     background-size: cover;
     background-position: center;
@@ -44,49 +29,25 @@ body {
     background-attachment: fixed;
 }
 
-/* Typography */
-h1, h2, h3, h4, .section-title {
-    font-family: var(--font-heading), serif;
-    font-weight: 500;
-    text-align: center;
-}
+/* =========================================
+   Page Container
+   ========================================= */
 
-h1 {
-    font-size: 2.5rem;
-    color: var(--color-olive);
-    letter-spacing: 6px;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    letter-spacing: 4px;
-    color: var(--color-olive);
-}
-
-.section-subtitle {
-    text-align: center;
-    font-family: var(--font-subtitle);
-    font-size: 1.3rem;
-    color: var(--color-golden);
-    margin-bottom: 1rem;
-    /*font-size: 1.1rem;*/
-    /*font-style: italic;*/
-    /*color: var(--color-text-light);*/
-    /*margin-bottom: var(--space-lg);*/
-    /*font-weight: 400;*/
-}
-
-.page-container {
+.yunis-page-container {
     max-width: 1000px;
     width: 95%;
     margin: 4rem auto 0 auto;
-    background-color: var(--color-bg-light);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.08); /* Soft floating shadow */
+    background-color: var(--wp--preset--color--bg-light);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
 }
 
-header {
+/* =========================================
+   Hero / Parallax Header
+   ========================================= */
+
+.yunis-hero-header {
     position: relative;
     height: 75vh;
     overflow: hidden;
@@ -94,9 +55,9 @@ header {
     flex-direction: column;
 }
 
-header .parallax-bg {
+.yunis-hero-header .parallax-bg {
     position: absolute;
-    top: -10%; 
+    top: -10%;
     left: -10%;
     right: -10%;
     bottom: -10%;
@@ -106,24 +67,78 @@ header .parallax-bg {
     will-change: transform;
 }
 
-header .layer-bg {
+.yunis-hero-header .layer-bg {
     background-image: url("assets/bg/background.png");
     background-position: center center;
 }
 
-header .layer-fg {
+.yunis-hero-header .layer-fg {
     background-image: url("assets/bg/foreground.png");
     background-position: center bottom;
 }
 
-header > *:not(.parallax-bg):not(.wave-bottom):not(.wave-top) {
+.yunis-hero-header > *:not(.parallax-bg):not(.wave-bottom):not(.wave-top) {
     position: relative;
     z-index: 2;
 }
 
+/* Sub-page hero variants */
+.yunis-hero-subpage {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.yunis-hero-subpage-short {
+    height: 50vh;
+}
+
+.yunis-hero-subpage .parallax-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+}
+
+.yunis-hero-subpage > *:not(.parallax-bg):not(.wave-bottom) {
+    position: relative;
+    z-index: 2;
+}
+
+.yunis-hero-center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.yunis-hero-center-content h1 {
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.yunis-hero-center-content .section-subtitle {
+    color: var(--wp--preset--color--bg-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================
+   Wave Dividers
+   ========================================= */
+
 .wave-top {
     position: absolute;
-    top: -70px; /* Offset subpixel rendering */
+    top: -70px;
     left: 0;
     width: 100%;
     line-height: 0;
@@ -133,31 +148,124 @@ header > *:not(.parallax-bg):not(.wave-bottom):not(.wave-top) {
 
 .wave-bottom {
     position: absolute;
-    bottom: -5px; /* Offset subpixel rendering */
+    bottom: -5px;
     left: 0;
     width: 100%;
     line-height: 0;
     z-index: 3;
 }
 
-section {
-    padding: var(--space-lg) var(--space-lg);
+/* =========================================
+   Section Defaults
+   ========================================= */
+
+.yunis-section {
+    padding: 5rem;
     text-align: center;
     position: relative;
     z-index: 5;
     background: transparent;
 }
 
+.section-title {
+    font-family: var(--wp--preset--font-family--heading), serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--wp--preset--color--olive);
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-family: var(--wp--preset--font-family--accent);
+    font-size: 1.3rem;
+    color: var(--wp--preset--color--golden);
+    margin-bottom: 1rem;
+}
+
 .separator {
     display: inline-block;
-    margin: var(--space-md) 0;
+    margin: 2rem 0;
 }
+
+/* =========================================
+   Navbar
+   ========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--wp--preset--color--text-dark);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--wp--preset--color--terracotta);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--wp--preset--color--terracotta);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: stroke 0.3s ease;
+    stroke: var(--wp--preset--color--text-dark);
+}
+
+.icon:hover {
+    stroke: var(--wp--preset--color--terracotta);
+}
+
+/* =========================================
+   Gallery
+   ========================================= */
+
 .gallery {
     display: flex;
     gap: 10px;
     object-fit: cover;
-    /*flex-direction: column;*/
-    /*justify-content: space-evenly;*/
+    justify-content: center;
 }
 
 .gallery-image {
@@ -165,85 +273,50 @@ section {
     height: auto;
 }
 
-.decoration {
-    position: absolute;
-}
+/* =========================================
+   Music Section
+   ========================================= */
 
-.plant-1 {
-    top: 0;
-    left: -28px;
-    width: 20%;
-    transform: rotate(2deg);
-}
-
-.smudge-1 {
-    top: 50%;
-    right: -150px;
-    width: 40%;
-    opacity: 0.4;
-}
-
-.retreats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-}
-
-.retreat-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.4s ease;
-}
-
-.retreat-card:hover {
-    transform: translateY(-10px);
-}
-
-.icon-wrapper {
-    width: 80px;
-    height: 80px;
-    margin-bottom: var(--space-md);
-}
-
-/* Music Section */
-#music {
+.yunis-music-section {
     min-height: 55vh;
     background-image: url('assets/images/cat_headphones.png');
     background-size: contain;
     background-position: center;
     background-attachment: fixed;
-    background-color: var(--color-terracotta);
-    color: var(--color-text-dark);
-    /* Giving it a solid block feel */
-    margin: 0; 
+    background-color: var(--wp--preset--color--terracotta);
+    color: var(--wp--preset--color--text-dark);
+    margin: 0;
     position: relative;
+    padding: 5rem;
+    text-align: center;
 }
 
-
-#music .section-title {
-    color: var(--color-bg-dark);
+.yunis-music-section .section-title {
+    color: var(--wp--preset--color--bg-dark);
 }
 
-#music .section-subtitle {
-    color: var(--color-olive);
+.yunis-music-section .section-subtitle {
+    color: var(--wp--preset--color--olive);
 }
+
+/* =========================================
+   Custom Audio Player
+   ========================================= */
 
 .music-player-container {
     display: flex;
     justify-content: center;
-    margin-top: var(--space-md);
+    margin-top: 2rem;
 }
 
 .custom-player {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background: var(--color-bg-dark);
+    background: var(--wp--preset--color--bg-dark);
     padding: 1rem 2rem;
     border-radius: 50px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 500px;
 }
@@ -251,7 +324,7 @@ section {
 .player-btn {
     background: none;
     border: none;
-    color: var(--color-golden);
+    color: var(--wp--preset--color--golden);
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -278,9 +351,9 @@ section {
     align-items: center;
     gap: 1rem;
     flex-grow: 1;
-    color: var(--color-sand);
+    color: var(--wp--preset--color--sand);
     font-size: 0.9rem;
-    font-family: var(--font-body);
+    font-family: var(--wp--preset--font-family--body);
 }
 
 #progress-bar {
@@ -301,9 +374,9 @@ section {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--color-golden);
+    background: var(--wp--preset--color--golden);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
 }
 
@@ -315,9 +388,55 @@ section {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--color-golden);
+    background: var(--wp--preset--color--golden);
     cursor: pointer;
     border: none;
+}
+
+/* =========================================
+   Activities / Retreat Cards
+   ========================================= */
+
+.decoration {
+    position: absolute;
+}
+
+.plant-1 {
+    top: 0;
+    left: -28px;
+    width: 20%;
+    transform: rotate(2deg);
+}
+
+.smudge-1 {
+    top: 50%;
+    right: -150px;
+    width: 40%;
+    opacity: 0.4;
+}
+
+.retreats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+.retreat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s ease;
+}
+
+.retreat-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
 }
 
 .retreat-card h3 {
@@ -327,93 +446,33 @@ section {
 
 .retreat-card .date {
     font-size: 0.8rem;
-    color: var(--color-text-light);
+    color: var(--wp--preset--color--text-light);
     margin-bottom: 0.5rem;
 }
 
 .retreat-card .desc {
     font-size: 0.9rem;
-    color: var(--color-text-light);
+    color: var(--wp--preset--color--text-light);
     max-width: 200px;
     margin-bottom: 1rem;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-md) var(--space-lg);
-    width: 100%;
-}
+/* =========================================
+   Buttons
+   ========================================= */
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: var(--space-md);
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--color-text-dark);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-terracotta);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--color-terracotta);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-icons {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition: stroke 0.3s ease;
-    stroke: var(--color-text-dark);
-}
-
-.icon:hover {
-    stroke: var(--color-terracotta);
-}
-
-/* Buttons */
 .btn-primary {
     text-transform: uppercase;
     display: inline-block;
     background-color: transparent;
-    color: var(--color-terracotta);
+    color: var(--wp--preset--color--terracotta);
     padding: 0.8rem 2.5rem;
     text-decoration: none;
-    font-family: var(--font-heading);
+    font-family: var(--wp--preset--font-family--heading);
     font-size: 1.1rem;
     letter-spacing: 2px;
     transition: all 0.4s ease;
-    border: 1px solid var(--color-terracotta);
+    border: 1px solid var(--wp--preset--color--terracotta);
     cursor: pointer;
     border-radius: 40px;
     position: relative;
@@ -424,9 +483,11 @@ section {
 .btn-primary::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: var(--color-terracotta);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--wp--preset--color--terracotta);
     z-index: -1;
     transition: transform 0.4s ease;
     transform: scaleX(0);
@@ -442,22 +503,29 @@ section {
     transform-origin: left;
 }
 
-/* Contact Section */
-#contact {
-    background-color: var(--color-terracotta);
-    color: var(--color-bg-dark);
+/* =========================================
+   Contact Section
+   ========================================= */
+
+.yunis-contact-section {
+    background-color: var(--wp--preset--color--terracotta);
+    color: var(--wp--preset--color--bg-dark);
+    padding: 5rem;
+    text-align: center;
+    position: relative;
 }
 
-#contact .section-title {
-    color: var(--color-bg-dark);
+.yunis-contact-section .section-title {
+    color: var(--wp--preset--color--bg-dark);
 }
-#contact .section-subtitle {
-    color: var(--color-olive);
+
+.yunis-contact-section .section-subtitle {
+    color: var(--wp--preset--color--olive);
 }
 
 .contact-form {
     max-width: 500px;
-    margin: var(--space-md) auto 0;
+    margin: 2rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -469,9 +537,9 @@ section {
     padding: 0.8rem 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(26, 18, 8, 0.3); /* dark color with low opacity */
-    color: var(--color-bg-dark);
-    font-family: var(--font-body);
+    border-bottom: 1px solid rgba(26, 18, 8, 0.3);
+    color: var(--wp--preset--color--bg-dark);
+    font-family: var(--wp--preset--font-family--body);
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s ease;
@@ -485,20 +553,70 @@ section {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-bottom-color: var(--color-bg-dark);
+    border-bottom-color: var(--wp--preset--color--bg-dark);
 }
 
 .form-submit {
     margin-top: 1rem;
-    align-self: center; /* Centering the button */
-    border-color: var(--color-bg-dark);
-    color: var(--color-bg-dark);
+    align-self: center;
+    border-color: var(--wp--preset--color--bg-dark);
+    color: var(--wp--preset--color--bg-dark);
 }
 
 .form-submit::before {
-    background-color: var(--color-bg-dark);
+    background-color: var(--wp--preset--color--bg-dark);
 }
 
 .form-submit:hover {
-    color: var(--color-terracotta);
+    color: var(--wp--preset--color--terracotta);
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+.yunis-footer {
+    background: var(--wp--preset--color--bg-dark);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.yunis-footer-tagline {
+    font-family: var(--wp--preset--font-family--accent);
+    font-size: 1.1rem;
+    color: var(--wp--preset--color--terracotta);
+    opacity: 0.5;
+}
+
+/* =========================================
+   Service Page Content
+   ========================================= */
+
+.yunis-service-content {
+    padding: 10rem 5rem;
+    min-height: 50vh;
+    position: relative;
+}
+
+.yunis-service-content .section-title {
+    margin-bottom: 2rem;
+}
+
+.yunis-service-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.yunis-service-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.yunis-decoration-absolute {
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: multiply;
 }
