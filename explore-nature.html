@@ -8,17 +8,22 @@
 </head>
 <body>
 <div class="page-container">
-    <header style="height: 50vh;">
+    <header class="subpage-header subpage-header--short">
         <div class="parallax-bg layer-bg" style="background-image: url('assets/images/explore_nature_hero_1775455972400.png'); background-position: center;"></div>
         <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html" style="color:white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">HOME</a></li>
-                <li><a href="index.html#activities" style="color:white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">ACTIVITIES</a></li>
+            <ul class="nav-links nav-links--light">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#activities">ACTIVITIES</a></li>
             </ul>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; width: 100%;">
-             <h1 style="color:white; text-shadow: 0 4px 20px rgba(0,0,0,0.8);">Explore Nature</h1>
-             <p class="section-subtitle" style="color:var(--color-bg-light); text-shadow: 0 2px 10px rgba(0,0,0,0.6);">Medicine of the earth</p>
+        <div class="subpage-hero-content">
+             <h1>Explore Nature</h1>
+             <p class="section-subtitle">Medicine of the earth</p>
         </div>
         <div class="wave-bottom">
             <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -26,32 +31,43 @@
             </svg>
         </div>
     </header>
-    
-    <main style="padding: var(--space-xl) var(--space-lg); min-height: 75vh; position: relative;">
-        <img src="assets/images/plant_branch_1775364605554.png" style="position: absolute; top:50px; left:-50px; width:300px; opacity:0.8; mix-blend-mode:multiply; pointer-events:none;">
-        <h2 class="section-title">The Living Pharmacy</h2>
-        <p style="text-align:center; max-width: 600px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+
+    <nav class="nav-overlay">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#activities">Activities</a></li>
+        </ul>
+    </nav>
+
+    <main class="subpage-main">
+        <img src="assets/images/plant_branch_1775364605554.png" alt="" class="subpage-decoration" style="top:50px; left:-50px; width:300px; opacity:0.8;">
+        <h2 class="section-title reveal">The Living Pharmacy</h2>
+        <p class="reveal">
             Nature provides everything we need to heal, ground, and restore our bodies. In these guided walks, we will explore the quiet corners of the forest to discover wild herbs, medicinal roots, and the ancient wisdom held within the flora around us.<br><br>
             It is a journey of slowing down—learning to identify, respectfully forage, and prepare nature's gifts. Reconnect with the soil, breathe the forest air, and let the earth remind you of your own natural state of balance.
         </p>
-        <div style="text-align:center; margin-top: 3rem;">
+        <div class="subpage-cta reveal">
              <a href="index.html#contact" class="btn-primary">Join a Walk</a>
         </div>
     </main>
-    
-    <footer style="background:var(--color-bg-dark);padding:3rem 2rem;text-align:center;">
-        <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--color-terracotta);opacity:0.5;">made with love, under open sky</p>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Yunis</p>
+        <p class="footer-tagline">made with love, under open sky</p>
+        <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#activities">Activities</a></li>
+        </ul>
+        <p class="footer-credit">&copy; Yunis</p>
     </footer>
 </div>
 
-<script>
-    document.addEventListener('scroll', function () {
-        const scrollPosition = window.pageYOffset;
-        const bgLayer = document.querySelector('.layer-bg');
-        if (bgLayer) {
-            bgLayer.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
-        }
-    });
-</script>
+<button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<script src="main.js"></script>
 </body>
 </html>
