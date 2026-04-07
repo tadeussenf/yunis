@@ -476,9 +476,10 @@ section {
 #music {
     min-height: 55vh;
     background-image: url('assets/images/cat_headphones.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-color: var(--color-terracotta);
     color: var(--color-text-dark);
     margin: 0;
