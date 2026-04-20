@@ -1,0 +1,109 @@
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  wordpress:
+    image: wordpress:6.7-php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - wp_data:/var/www/html
+      - .:/var/www/html/wp-content/themes/yunis
+    ports:
+      - "8080:80"
+
+  wpcli:
+    image: wordpress:cli-php8.3
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wp_data:/var/www/html
+      - .:/var/www/html/wp-content/themes/yunis
+    user: "33:33"
+    entrypoint: >
+      sh -c '
+        # Wait for WordPress files to be present
+        until [ -f /var/www/html/wp-includes/version.php ]; do sleep 1; done
+
+        # Install WordPress if not already installed
+        if ! wp core is-installed --allow-root 2>/dev/null; then
+          wp core install \
+            --url=http://localhost:8080 \
+            --title="Yunis" \
+            --admin_user=admin \
+            --admin_password=admin \
+            --admin_email=admin@example.com \
+            --skip-email
+          echo "WordPress installed."
+        fi
+
+        # Activate theme
+        wp theme activate yunis
+
+        # Create front page
+        if ! wp post list --post_type=page --name=home --field=ID | grep -q .; then
+          HOME_ID=$(wp post create \
+            --post_type=page \
+            --post_title="Home" \
+            --post_status=publish \
+            --post_name=home \
+            --porcelain)
+          wp option update page_on_front "$HOME_ID"
+          wp option update show_on_front page
+          echo "Front page created (ID: $HOME_ID)."
+        fi
+
+        # Create service pages
+        for slug in music-lessons explore-nature holistic-consulting; do
+          TITLE=$(echo "$slug" | sed "s/-/ /g" | awk "{for(i=1;i<=NF;i++) \$i=toupper(substr(\$i,1,1)) substr(\$i,2)} 1")
+          if ! wp post list --post_type=page --name="$slug" --field=ID | grep -q .; then
+            wp post create \
+              --post_type=page \
+              --post_title="$TITLE" \
+              --post_status=publish \
+              --post_name="$slug" \
+              --porcelain
+            echo "Page created: $TITLE"
+          fi
+        done
+
+        echo ""
+        echo "=============================="
+        echo " WordPress is ready!"
+        echo " http://localhost:8080"
+        echo " Admin: http://localhost:8080/wp-admin"
+        echo " User: admin / Password: admin"
+        echo "=============================="
+      '
+
+volumes:
+  db_data:
+  wp_data:
